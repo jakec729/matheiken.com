@@ -1,0 +1,22 @@
+@mixin hover-link($color: $primary-dark, $underline: false) {
+	text-decoration: none;
+
+	&:hover {
+		@if $underline == true {
+			text-decoration: underline;
+		}
+		color: $color;
+	}
+}
+
+.hover-link {
+	@include hover-link();
+}
+
+a {
+	color: $link-color;
+
+	&:hover {
+		color: $text-color;
+	}
+}

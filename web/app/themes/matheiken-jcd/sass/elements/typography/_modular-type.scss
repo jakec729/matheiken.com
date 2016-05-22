@@ -1,0 +1,28 @@
+@function modular-type( $level, $base: $base-font-size, $ratio: $modular-type-ratio ){
+	$size: $base;
+
+	@if ($level > 1) {
+		@for $i from 1 to ($level){
+			$size: $size * $ratio;
+		}
+	}
+
+	@if ($level < 1) {
+		@for $i from 1 to ($level){
+			$size: $size / $ratio;
+		}
+	}
+
+	@return $size;
+}
+
+@function mt( $level, $base: $base-font-size, $ratio: $modular-type-ratio ){
+	@return modular-type( $level, $base, $ratio );
+}
+
+h1, .mt-6 { font-size: modular-type(6); }
+h2, .mt-5 { font-size: modular-type(5); }
+h3, .mt-4 { font-size: modular-type(4); }
+h4, .mt-3 { font-size: modular-type(3); }
+h5, .mt-2 { font-size: modular-type(2); }
+h6, .mt-1 { font-size: modular-type(1); }

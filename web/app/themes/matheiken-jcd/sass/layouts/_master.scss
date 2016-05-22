@@ -1,0 +1,47 @@
+@mixin grid-lines() {
+	&::before {
+		background: linear-gradient(
+	        90deg,
+	        rgba(0,0,0,0.05) 0%,
+	        transparent 0.5%
+		);
+		background-size: $col-width; 
+		z-index: 1000;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		content: "";
+		display: block;
+		pointer-events: none;
+	}
+}
+
+.grid-lines {
+	@include grid-lines;
+}
+
+body {
+	min-width: $col-width * 2;
+}
+
+.site-header {
+	padding-top: $gutter * 4;
+}
+
+.site-footer {
+	display: none;
+	font-size: 11px;
+
+	@include bp-min($col-width * 4 + $col-width/4) {
+		display: block;
+		position: fixed;
+		bottom: $gutter * 3;
+		right: 0;
+		transform: rotate(-90deg);
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}

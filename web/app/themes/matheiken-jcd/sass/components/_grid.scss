@@ -1,0 +1,38 @@
+@mixin container-grid-bp-min($cols) {
+	@include bp-min($col-width * $cols + $grid-offset-side * 2) {
+		@content;
+	}
+}
+
+@mixin container-grid-bp-max($cols) {
+	@include bp-max($col-width * $cols + $grid-offset-side * 2 - 1px) {
+		@content;
+	}
+}
+
+.container-fluid {
+	width: 100%;
+
+	@include bp-min($col-width * 3) {
+		width: $col-width * 3;
+	}
+
+	@for $i from 3 through 12 {
+		@include container-grid-bp-min($i) {
+			margin: 0 auto;
+			width: $col-width * $i; 
+		}
+	}
+}
+
+//bp-min
+.container-fluid-max .container-fluid {
+	max-width: $col-width * $container-fluid-max-cols;
+
+	@include bp-min($col-width * 2) {
+		margin-left: $grid-offset-side;
+	}
+}
+
+
+

@@ -1,0 +1,51 @@
+// BASIC COLORS
+$black: 			black !default;
+$white: 			white !default;
+$cyan: 				cyan !default;
+$dark-blue:			darkblue !default;
+$green: 			forestgreen !default;
+$orange:			orange !default;
+$red: 				red !default;
+$yellow: 			yellow !default;
+
+// GREYS
+$light-grey:		darken(white, 15%) !default;
+$medium-grey:		darken(white, 50%) !default;
+$dark-grey:			darken(white, 85%) !default;
+
+// MISC COLORS
+$off-white: 		darken($white, 4%) !default;
+
+// SOCIAL COLORS
+$twitter: 			#00aced !default;
+$facebook: 			#3b5998 !default;
+$googleplus: 		#dd4b39 !default;
+$pinterest: 		#cb2027 !default;
+$behance: 			#1769ff !default;
+$linkedin: 			#007bb6 !default;
+$youtube: 			#bb0000 !default;
+$vimeo: 			#aad450 !default;
+$tumblr: 			#32506d !default;
+$instagram: 		#517fa4 !default;
+$flickr: 			#ff0084 !default;
+$dribbble: 			#ea4c89 !default;
+$quora: 			#a82400 !default;
+$foursquare: 		#0072b1 !default;
+$forrst: 			#5B9A68 !default;
+$vk: 				#45668e !default;
+$wordpress: 		#21759b !default;
+$stumbleupon: 		#EB4823 !default;
+$yahoo: 			#7B0099 !default;
+$blogger: 			#fb8f3d !default;
+$soundcloud: 		#ff3a00 !default;
+
+// SITE COLORS
+$primary-color:		$dark-blue !default;
+$primary-dark: 		darken($primary-color, 20%);
+$accent-color:		rgb(16,120,152) !default;
+$aside-color:		$medium-grey !default;
+$text-color:		$dark-grey !default;
+$headline-color:	darken($primary-color, 10%) !default;
+$subheading-color: 	$primary-color !default;
+$link-color: 		$accent-color !default;
+$background-color:	$off-white !default;
