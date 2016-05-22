@@ -97,6 +97,15 @@
 
 	figure {
 		margin-bottom: $gutter;
+
+		&.half-width {
+			width: calc(50% - .5em);
+			float: left;
+		}
+
+		&.half-width + .half-width {
+			margin-left: 1em;
+		}
 	}
 
 	a.cta {

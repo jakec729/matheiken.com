@@ -29,11 +29,16 @@
 					<?php the_content(); ?>
 				</div>
 			</div>
-			<?php if (get_field('project_images')): ?>
+			<?php if (have_rows('project_images')): ?>
 				<div class="post__images flex-expander">
-					<?php foreach (get_field('project_images') as $image): ?>
-						<figure><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>"></figure>
-					<?php endforeach ?>
+					<?php while (have_rows('project_images')): the_row(); 
+						$image = get_sub_field('image');
+						$alignment = get_sub_field('alignment');
+					?>
+						<figure class="<?= $alignment ?>">
+							<img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
+						</figure>
+					<?php endwhile; ?>
 				</div>
 			<?php endif ?>
 		</section>
