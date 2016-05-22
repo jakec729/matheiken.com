@@ -15,13 +15,33 @@ if ( ! function_exists( 'matheiken_featured_image') ) :
 				the_post_thumbnail(); 
 				$caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 				 
-			    if ( $caption != "" ): ?>
-			        <figcaption>
-			            <?php echo $caption; ?> &rarr;
-			        </figcaption>
-			    <?php endif; ?>
+				if ( $caption != "" ): ?>
+					<figcaption>
+						<?php echo $caption; ?> &rarr;
+					</figcaption>
+				<?php endif; ?>
 			</figure>
 		<?php endif;
+	}
+endif;	
+
+if ( ! function_exists( 'matheiken_project_banner') ) :
+	function matheiken_project_banner() {
+		$images = get_field('project_banner');
+		if ($images): foreach ($images as $image): ?>
+
+			<figure class="post__image flex-expander">
+				<a href="<?php echo $image['url']; ?>">
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				</a>	
+				<? if($image['caption']): ?>			 
+					<figcaption>
+						<?php echo $image['caption']; ?> &rarr;
+					</figcaption>
+				<?php endif; ?>
+			</figure>
+
+		<?php endforeach; endif;
 	}
 endif;	
 
@@ -144,10 +164,10 @@ function matheiken_categories() {
 	$output = '';
 	
 	if ( ! empty( $categories ) ) {
-	    foreach( $categories as $category ) {
-	        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-	    }
-	    echo trim( $output, $separator );
+		foreach( $categories as $category ) {
+			$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+		}
+		echo trim( $output, $separator );
 	}
 }
 
@@ -158,7 +178,7 @@ function matheiken_first_category() {
 	
 	if ( ! empty( $categories ) ) {
 		$category = $categories[0];
-        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-	    echo trim( $output, $separator );
+		$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+		echo trim( $output, $separator );
 	}
 }

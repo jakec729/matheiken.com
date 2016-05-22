@@ -15,15 +15,15 @@
 
 		<?php if (has_post_thumbnail()) : ?>
 			<header class="post__header">
-				<?php matheiken_featured_image() ?>
+				<?php matheiken_project_banner() ?>
 			</header>
 		<?php endif; ?>
 
 		<section class="post__details">
 			<div class="post__content">
 				<h1 class="post__title"><?php the_title(); ?></h1>
-				<?php if (get_field('subhead')): ?>
-					<p class="post__subhead"><?php the_field('subhead'); ?></p>
+				<?php if (get_field('project_short_description')): ?>
+					<p class="post__subhead"><?php the_field('project_short_description'); ?></p>
 				<?php endif ?>
 				<div class="post__description">
 					<?php the_content(); ?>
@@ -59,7 +59,8 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class("project flex-item hover-fixed hover-fixed__trigger"); ?>>
 		<?php if (has_post_thumbnail()) : ?>
-			<figure class="project__image hover-fixed__image">
+			<?php $position = (has_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
+			<figure class="project__image hover-fixed__image <?= 'hover-' . $position ?>">
 				<?php the_post_thumbnail(); ?>
 			</figure>
 		<?php endif; ?>
