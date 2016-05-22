@@ -59,7 +59,7 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class("project flex-item hover-fixed hover-fixed__trigger"); ?>>
 		<?php if (has_post_thumbnail()) : ?>
-			<?php $position = (has_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
+			<?php $position = (get_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
 			<figure class="project__image hover-fixed__image <?= 'hover-' . $position ?>">
 				<?php the_post_thumbnail(); ?>
 			</figure>
