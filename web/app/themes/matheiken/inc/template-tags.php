@@ -34,7 +34,7 @@ if ( ! function_exists( 'matheiken_project_banner') ) :
 				<a href="<?php echo $image['url']; ?>">
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 				</a>	
-				<? if($image['caption']): ?>			 
+				<?php if($image['caption']): ?>			 
 					<figcaption>
 						<?php echo $image['caption']; ?> &rarr;
 					</figcaption>
