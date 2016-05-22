@@ -1,0 +1,46 @@
+// Base Sizes
+$base-font-size: 16px !default;
+$base-line-height: 1.6em !default;
+$base-type-margin: 1.5em !default;
+$base-block-margin: (2 * $base-type-margin) !default;
+$modular-type-ratio: (7/6) !default;
+$default-tracking: .2em !default;
+
+// Base Fonts
+$font-serif: "Merriweather", Georgia, serif;
+$font-sans: "Roboto", Helveitca, Arial, sans-serif !default;
+$headline-font: $font-serif !default;
+$body-font: $font-sans !default;
+
+// Blocks
+$block-color: $light-grey !default;
+$block-width: 2em !default;
+$block-margin: 1.5em !default;
+$block-height: .125em !default;
+
+// Indents
+$base-indent: 2em !default;
+
+// HR
+$base-hr-size: 2px !default;
+$base-hr-margin: ($base-block-margin * 2) !default;
+
+// STORY
+$post-font: $font-serif !default;
+$post-font-size: 1.25rem !default;
+$post-line-height: 1.9rem !default;
+$post-inset-padding: 6rem !default;
+$post-color: $text-color !default;
+
+$article-single-sidebar-width: 18% !default;
+$article-blockquote-indent: 2rem !default;
+
+@function context( $desired, $container ){
+	@return $desired / $container * 100%;
+}
+
+// LONGFORM COMPONENT
+$longform-content-width: 60%;
+$longform-sidebar-width: (100% - $longform-content-width) / 2;
+$longform-aside-width: context($longform-sidebar-width, $longform-content-width);
+$longform-figure-outdent: 2rem;

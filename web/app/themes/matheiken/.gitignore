@@ -1,0 +1,15 @@
+###Wordpress###
+
+*.log
+.htaccess
+_s
+
+###SASS###
+
+.sass-cache
+*.css.map
+
+###NPM### 
+bower_components
+node_modules
+vendor

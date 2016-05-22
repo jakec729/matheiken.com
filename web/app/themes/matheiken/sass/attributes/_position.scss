@@ -1,0 +1,61 @@
+@mixin clearfix{
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+@mixin full-width() {	
+	display: block;
+	float: none;
+	width: 100%;
+}
+
+%full-width {
+	@include full-width();
+}
+
+@mixin centered($width: null) {
+	width: $width;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: none !important;
+}
+
+.centered {
+	@include centered();
+}
+
+
+@mixin cover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.block {
+	display: block !important;
+}
+
+@mixin indent($indent: $base-indent){
+	margin-left: $indent;
+	margin-right: $indent;
+}
+
+@mixin outdent($indent: $base-indent){
+	margin-left: (-1 * $indent);
+	margin-right: (-1 * $indent);
+}
+
+@mixin context-outdent($outdent, $container){
+	@include outdent( context($outdent, $container) );
+	width: 100% + context( (2 * $outdent), $container);
+}

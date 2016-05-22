@@ -1,0 +1,20 @@
+h1,h2,h3,h4,h5,h6 {
+	color: $subheading-color;
+	line-height: 1.5em;
+	margin: $base-type-margin 0;
+
+	small {
+		font-family: $font-sans;
+		font-size: mt(1);
+		font-weight: 500;
+		color: grey(30);
+	}
+}
+
+h1 {
+	color: $headline-color;
+}
+
+.heading {
+	margin-top: 0;
+}
