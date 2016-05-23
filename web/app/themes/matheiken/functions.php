@@ -84,6 +84,11 @@ add_action( 'wp_enqueue_scripts', function() {
 });
 
 /**
+ * Custom fields tags for this theme.
+ */
+// require get_template_directory() . '/inc/acf.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

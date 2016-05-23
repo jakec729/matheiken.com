@@ -48,7 +48,7 @@
 			<div class="projects flex-container">
 				<?php $projects = [1,2,3,4]; if($projects): foreach ($projects as $project): ?>
 					<article class="project flex-item">
-						<p class="project__category"><?php matheiken_first_category(); ?></p>
+						<p class="project__category"><?php matheiken_categories(); ?></p>
 						<a href="single-post.html" class="project__link">
 							<h4 class="project__title">Project Title&nbsp;<span class="arrow">&rarr;</span></h4>
 							<p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, suscipit.</p>
@@ -63,18 +63,11 @@
 <?php else: ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class("project flex-item hover-fixed hover-fixed__trigger"); ?>>
-		<?php if (has_post_thumbnail()) : ?>
-			<?php $position = (get_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
-			<figure class="project__image hover-fixed__image <?= 'hover-' . $position ?>">
-				<?php the_post_thumbnail(); ?>
-			</figure>
-		<?php endif; ?>
-		<p class="project__category"><?php matheiken_first_category(); ?></p>
+		<?php matheiken_cover_photo(); ?>
+		<p class="project__category"><?php matheiken_categories(); ?></p>
 		<a href="<?php the_permalink(); ?>" class="project__link">
 			<h4 class="project__title entry-title"><?= get_the_title() ?>&nbsp;<span class="arrow">&rarr;</span></h4>
-			<p class="project__description">
-				<?= get_the_excerpt() ?>
-			</p>
+			<p class="project__description"><?php matheiken_excerpt(); ?></p>
 		</a>
 	</article>
 

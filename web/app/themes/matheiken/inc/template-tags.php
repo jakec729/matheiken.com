@@ -42,3 +42,28 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 		<?php endforeach; endif;
 	}
 endif;	
+
+if ( ! function_exists( 'matheiken_categories') ) :
+	function matheiken_categories() {
+		return the_category( ', ' );
+	}
+endif;
+
+if ( ! function_exists( 'matheiken_excerpt') ) :
+	function matheiken_excerpt() {
+		return (get_field('project_short_description')) 
+			? the_field('project_short_description') 
+			: the_excerpt();
+	}
+endif;
+
+if ( ! function_exists( 'matheiken_cover_photo') ) :
+	function matheiken_cover_photo() {
+		if (has_post_thumbnail()) : ?>
+			<?php $position = (get_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
+			<figure class="project__image hover-fixed__image <?= 'hover-' . $position ?>">
+				<?php the_post_thumbnail(); ?>
+			</figure>
+		<?php endif; 
+	}
+endif;
