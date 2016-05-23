@@ -9,21 +9,21 @@
 
 ?>
 
-<!-- <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>> -->
-	<header class="post__header">
-		<div class="flex-expander">
-			<?php matheiken_featured_image(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+		<section class="post__hero">
+			<?php matheiken_hero_image(); ?>
+		</section>
+			
+		<header class="post__header">
 			<?php the_title('<h1 class="post__title entry-title flex-expander">', '</h1>'); ?>
-		</div>
-	</header>
-	<section class="post__details">
+		</header>
+
 		<?php if (is_dynamic_sidebar('about_sidebar')): ?>
 		<aside class="post__sidebar sidebar">
 			<div class="widget-wrap clearfix">
 				<div class="inner">
-					<?php dynamic_sidebar('about_sidebar'); ?>
-					<div class="sidebar__widget social">
-						<ul class="list-unstyled list--social">
+					<div class="sidebar__widget widget-social">
+						<ul class="list-unstyled list-flex list--social">
 							<li><a href="#"><i class="fa fa-fw fa-instagram"></i></a></li>
 							<li><a href="#"><i class="fa fa-fw fa-twitter"></i></a></li>
 							<li><a href="#"><i class="fa fa-fw fa-tumblr"></i></a></li>
@@ -31,13 +31,15 @@
 							<li><a href="#"><i class="fa fa-fw fa-linkedin"></i></a></li>
 						</ul>
 					</div>
+					<?php dynamic_sidebar('about_sidebar'); ?>
 				</div>
 			</div>
 		</aside>
 		<?php endif; ?>
 
-		<div class="post__content">
+		<section class="post__content">
 			<?php the_content(); ?>
-		</div>
-	</section>
-<!-- </article> -->
+		</section>
+
+		<div style="clear: both;"></div>
+	</article>

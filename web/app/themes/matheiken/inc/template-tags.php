@@ -25,9 +25,9 @@ if ( ! function_exists( 'matheiken_featured_image') ) :
 	}
 endif;	
 
-if ( ! function_exists( 'matheiken_project_banner') ) :
-	function matheiken_project_banner() {
-		$images = get_field('project_banner');
+if ( ! function_exists( 'matheiken_hero_image') ) :
+	function matheiken_hero_image() {
+		$images = get_field('hero_images');
 		if ($images): foreach ($images as $image): ?>
 
 			<figure class="post__image flex-expander">

@@ -3,7 +3,6 @@
 	font-size: 13px;
 	line-height: 16px;
 
-	&__header,
 	&__sidebar,
 	&__details > div {
 		padding: 0 $gutter;
@@ -38,47 +37,10 @@
 	&__title {
 		@include block-separator();
 		margin-top: 0;
-	}
-
-
-	&__sidebar {
-		@include bp-max($col-width * 3) {
-
-			.sidebar__heading {
-				float: left;
-				width: 120px;
-				padding-left: 60px;
-			}
-
-			ul {
-				float: left;
-			}
-
-			.inner {
-				float: left;
-				width: 70%;
-			}
-
-			.sidebar__widget.social {
-				float: left;
-				width: 30%;
-
-				li {
-					display: inline-block;
-					width: 40px;
-				}
-			}
-
-		}
-
-	}
-
-
-	&__title {
 		font-size: 19px;
 		line-height: 23px;
 		font-weight: 900;
-		margin-bottom: 0;
+		margin-bottom: .5em;
 	}
 
 	&__subhead {
@@ -88,7 +50,6 @@
 	&__description {
 		font-weight: 400;
 		color: grey(60);
-		@include block-separator();
 	}
 
 	&__footer {
@@ -117,29 +78,56 @@
 
 .page-template-default {
 
-	.post__content {
-		flex: 0 0 $col-width*2;
+	.post__header,
+	.post__hero,
+	.post__content,
+	.post__sidebar {
+		display: block;
+		padding: 0 $gutter;
 	}
 
-	.post__sidebar {
-		flex: 0 0 $col-width * 2;
+	@include bp-min($col-width * 2) {
+		.post__header,
+		.post__content,
+		.post__sidebar {
+			width: $col-width * 2;
+		}
+	}
 
-		@include bp-min($col-width * 3) {
-			flex: 0 0 $col-width;
-			order: 2;
+	@include fixed-grid-bp-min(3) {
+		.post__header,
+		.post__content {
+			float: left;
+		}
+
+		.post__sidebar {
+			float: right;
+			width: $col-width;
+		}
+	}
+
+	@include fixed-grid-bp-min(4) {
+		.post__header,
+		.post__content {
+			width: $col-width * 3;
+		}
+	}
+	
+	@include fixed-grid-bp-min(5) {
+		.post__sidebar {
+			width: $col-width * 2;
+			padding-right: $gutter + $col-width;
 		}
 	}
 }
 
 .sidebar {
 
-	.widget-wrap {
-		border-top: 2px solid black;
+	.list--social {
 		border-bottom: 2px solid black;
-
-		@include bp-min($col-width * 3) {
-			border-bottom: none;
-		}
+		padding-bottom: 1em;
+		margin-top: 0;
+		margin-bottom: .5em;
 	}
 
 	&__heading {

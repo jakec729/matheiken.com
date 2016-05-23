@@ -103,6 +103,10 @@ function matheiken_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'matheiken_excerpt_more');
 
+add_filter( 'get_the_archive_title', function ( $title ) {
+	return (is_category()) ? single_cat_title("", false) : $title;
+});
+
 /**
  * Register widget area.
  *

@@ -10,6 +10,12 @@
 	}
 }
 
+@mixin fixed-grid-bp-min($cols) {
+	@include bp-min($col-width * $cols + $grid-offset-side) {
+		@content;
+	}
+}
+
 .container-fluid {
 	width: 100%;
 
@@ -28,10 +34,18 @@
 //bp-min
 .container-fluid-max .container-fluid {
 	max-width: $col-width * $container-fluid-max-cols;
+	margin-left: 0;
 
-	@include bp-min($col-width * 2) {
+	@include fixed-grid-bp-min(3) {
 		margin-left: $grid-offset-side;
 	}
+
+	@for $i from 3 through 12 {
+		@include fixed-grid-bp-min($i) {
+			width: $col-width * $i; 
+		}
+	}
+
 }
 
 

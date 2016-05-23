@@ -15,7 +15,7 @@
 
 		<?php if (has_post_thumbnail()) : ?>
 			<header class="post__header">
-				<?php matheiken_project_banner() ?>
+				<?php matheiken_hero_image() ?>
 			</header>
 		<?php endif; ?>
 
