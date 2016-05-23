@@ -94,7 +94,7 @@
 		}
 	}
 
-	@include fixed-grid-bp-min(3) {
+	@include bp-min($col-width * 3) {
 		.post__header,
 		.post__content {
 			float: left;
@@ -123,11 +123,30 @@
 
 .sidebar {
 
+	@include bp-max($col-width * 3 - 1px) {
+		.widget-wrap .inner {
+			& > div {
+				float: left;
+				margin-right: 4em;
+			}
+
+			& > .widget-social {
+				float: right;
+				margin-right: 0;
+			}
+		}
+	}
+
 	.list--social {
-		border-bottom: 2px solid black;
-		padding-bottom: 1em;
-		margin-top: 0;
-		margin-bottom: .5em;
+
+		@include bp-min($col-width * 3) {
+			display: flex;
+			border-bottom: 2px solid black;
+			padding-bottom: 1em;
+			margin-top: 0;
+			margin-bottom: .5em;
+			justify-content: space-between;
+		}
 	}
 
 	&__heading {
