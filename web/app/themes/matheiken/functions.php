@@ -60,48 +60,21 @@ function matheiken_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'matheiken_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'matheiken_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function matheiken_content_width() {
+add_action( 'after_setup_theme', function() {
 	$GLOBALS['content_width'] = apply_filters( 'matheiken_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'matheiken_content_width', 0 );
+}, 0 );
 
-function matheiken_excerpt_length($length) {
+add_filter('excerpt_length', function($length) {
     return 15;
-}
-add_filter('excerpt_length', 'matheiken_excerpt_length');
+});
 
-function matheiken_excerpt_more($more) {
+add_filter('excerpt_more', function($more) {
     return "...";
-}
-add_filter('excerpt_more', 'matheiken_excerpt_more');
+});
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	return (is_category()) ? single_cat_title("", false) : $title;
@@ -141,10 +114,6 @@ add_action( 'widgets_init', 'matheiken_widgets_init' );
 function matheiken_scripts() {
 	wp_enqueue_style( 'matheiken-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'matheiken-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'matheiken-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -152,26 +121,11 @@ function matheiken_scripts() {
 add_action( 'wp_enqueue_scripts', 'matheiken_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
