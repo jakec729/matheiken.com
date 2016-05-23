@@ -8,8 +8,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 var paths = {
-    scripts: ['js/scripts/*.js'],
-    styles: ['sass/**/*.scss'],
+    scripts: ['assets/js/scripts/*.js'],
+    styles: ['assets/sass/**/*.scss'],
 }
 
 // gulp.task('browserSync', function() {
@@ -20,7 +20,7 @@ gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
         .pipe(uglify())
         .pipe(concat('bundle.min.js'))
-        .pipe(gulp.dest('./js'));
+        .pipe(gulp.dest('./assets/js'));
 });
 
 gulp.task('sass', function () {

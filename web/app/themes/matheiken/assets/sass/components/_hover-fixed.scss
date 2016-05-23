@@ -9,8 +9,9 @@
 		display: none;
 		z-index: -1;
 		position: fixed;
-		width: 60%;
-		height: 100%;
+		max-width: 60%;
+		height: auto;
+		margin-bottom: 0 !important;
 
 		&.hover-top-left,
 		&.hover-top-right {
