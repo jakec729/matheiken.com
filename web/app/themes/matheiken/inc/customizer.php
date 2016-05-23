@@ -20,6 +20,6 @@ add_action( 'customize_register', 'matheiken_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function matheiken_customize_preview_js() {
-	wp_enqueue_script( 'matheiken_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'matheiken_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'matheiken_customize_preview_js' );
