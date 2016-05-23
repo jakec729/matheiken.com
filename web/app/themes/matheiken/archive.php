@@ -13,13 +13,6 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title archive__title"><small>Category</small>', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header>
-
 			<section class="projects flex-container">
 				<div class="flex-container projects-wrap">
 					<?php while ( have_posts() ) {
