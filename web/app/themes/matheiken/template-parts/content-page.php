@@ -22,15 +22,6 @@
 		<aside class="post__sidebar sidebar">
 			<div class="widget-wrap clearfix">
 				<div class="inner">
-					<div class="sidebar__widget widget-social">
-						<ul class="list-unstyled list-flex list--social">
-							<li><a href="#"><i class="fa fa-fw fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-fw fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-fw fa-tumblr"></i></a></li>
-							<li><a href="#"><i class="fa fa-fw fa-vimeo"></i></a></li>
-							<li><a href="#"><i class="fa fa-fw fa-linkedin"></i></a></li>
-						</ul>
-					</div>
 					<?php dynamic_sidebar('about_sidebar'); ?>
 				</div>
 			</div>
