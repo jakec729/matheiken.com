@@ -43,19 +43,8 @@
 			<?php endif ?>
 		</section>
 
-		<footer class="post__footer widget-related-projects">
-			<h3 class="widget__heading">Related Projects</h3>
-			<div class="projects flex-container">
-				<?php $projects = [1,2,3,4]; if($projects): foreach ($projects as $project): ?>
-					<article class="project flex-item">
-						<p class="project__category"><?php matheiken_categories(); ?></p>
-						<a href="single-post.html" class="project__link">
-							<h4 class="project__title">Project Title&nbsp;<span class="arrow">&rarr;</span></h4>
-							<p class="project__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, suscipit.</p>
-						</a>
-					</article>
-				<?php endforeach; endif; ?>
-			</div>
+		<footer class="post__footer">
+			<?php matheiken_related_projects(); ?>
 		</footer>
 
 	</article>

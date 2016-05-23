@@ -43,6 +43,29 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 	}
 endif;	
 
+if ( ! function_exists( 'matheiken_related_projects') ) :
+	function matheiken_related_projects() {
+		$posts = get_field('related_projects');
+		if ($posts) : ?>
+			<aside class="widget-related-projects">
+				<h3 class="widget__heading">Related Projects</h3>
+				<div class="projects flex-container">
+					<?php foreach ($posts as $post) : setup_postdata($post); ?>
+						<article class="project flex-item">
+							<p class="project__category"><?php matheiken_categories(); ?></p>
+							<a href="<?php the_permalink(); ?>" class="project__link">
+								<h4 class="project__title"><?php the_title() ?>&nbsp;<span class="arrow">&rarr;</span></h4>
+								<p class="project__description"><?php matheiken_excerpt(); ?></p>
+							</a>
+						</article>
+					<?php endforeach; wp_reset_postdata(); ?>
+				</div>
+			</aside>
+		<?php 
+		endif;	
+	}
+endif;
+
 if ( ! function_exists( 'matheiken_categories') ) :
 	function matheiken_categories() {
 		return the_category( ', ' );
