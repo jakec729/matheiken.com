@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45162820a1e69f55f45d467852bf7c5e",
-    "content-hash": "fb573b2d4c00d7b8fceb5a5c37951466",
+    "hash": "bc0931b39412c0de676c811addeb2983",
+    "content-hash": "f6b9b1c9f9e02b3ca8cfb4b8e600e31b",
     "packages": [
         {
             "name": "composer/installers",
@@ -342,6 +342,48 @@
             "time": "2016-04-15 10:48:49"
         },
         {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/",
+            "time": "2015-12-30 09:46:58"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-importer",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/",
+            "time": "2016-05-03 19:17:33"
+        },
+        {
             "name": "wpackagist-plugin/wp-migrate-db",
             "version": "dev-trunk",
             "source": {
@@ -446,7 +488,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/wp-migrate-db": 20
+        "wpackagist-plugin/wp-migrate-db": 20,
+        "wpackagist-plugin/regenerate-thumbnails": 20,
+        "wpackagist-plugin/wordpress-importer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

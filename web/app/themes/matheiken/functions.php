@@ -25,6 +25,9 @@ if ( ! function_exists( 'matheiken_setup' ) ) {
 			'gallery',
 			'caption',
 		) );
+
+		add_image_size( 'project_image_large', 1600 );
+		add_image_size( 'project_image_cover', 1000 );
 	}
 }
 add_action( 'after_setup_theme', 'matheiken_setup' );
