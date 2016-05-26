@@ -5,11 +5,17 @@
 
 	&__sidebar,
 	&__details > div {
-		padding: 0 $gutter;
+		@include bp-min($col-width * 2) {
+			padding: 0 $gutter;
+		}
 	}
 
-	&__header {
-		display: flex;
+	&__header,
+	&__hero {
+		@include bp-min($col-width * 2) {
+			display: flex;
+			padding: 0 $gutter;
+		}
 	}
 
 	&__image {
@@ -22,16 +28,20 @@
 	}
 
 	&__content {
-		@include bp-min($col-width * 2) {
+		@include bp-min($col-width * 3) {
+			flex: 0 0 $col-width * 3;
+		}
+
+		@include bp-min($col-width * 4) {
 			flex: 0 0 $col-width * 2;
 		}
 	}
 
 	.flex-expander {
-		flex: 0 0 $col-width * 2;
+		// flex: 0 0 $col-width * 2;
 		max-width: 100%;
 
-		@include bp-min($col-width * 3) {
+		@include bp-min($col-width * 3) {  
 			flex: 1 0 $col-width * 2;
 		}
 	}
@@ -80,12 +90,13 @@
 
 .page-template-default {
 
-	.post__header,
-	.post__hero,
 	.post__content,
 	.post__sidebar {
 		display: block;
-		padding: 0 $gutter;
+
+		@include bp-min($col-width * 2) {
+			padding: 0 $gutter;
+		}
 	}
 
 	@include bp-min($col-width * 2) {
@@ -163,5 +174,18 @@
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+.widget__heading {
+	font-size: 13px;
+	font-weight: 700;
+	padding: $gutter/2 0;
+	border-top: 1px solid black;
+	color: black;
+	margin: $gutter 0;
+
+	@include bp-min($col-width * 2) {
+		margin: $gutter;
 	}
 }

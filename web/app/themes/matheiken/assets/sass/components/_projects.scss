@@ -80,6 +80,14 @@
 	}
 }
 
+.projects.flex-container {
+	display: block;
+
+	@include bp-min($col-width * 3) {
+		display: flex;
+	}
+}
+
 .flex-container.projects-wrap {
 	flex: 1 1 0;
 }

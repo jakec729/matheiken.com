@@ -16,15 +16,17 @@
 	}
 }
 
-.flex-container {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+@include bp-min($col-width * 2) {
+	.flex-container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
 
-	
-	.flex-item {
-		padding-left: $gutter;
-		padding-right: $gutter;
-		flex: 0 0 $col-width;
+		
+		.flex-item {
+			padding-left: $gutter;
+			padding-right: $gutter;
+			flex: 0 0 $col-width;
+		}
 	}
 }
