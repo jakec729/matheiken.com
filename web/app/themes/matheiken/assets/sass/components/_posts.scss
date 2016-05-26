@@ -22,7 +22,9 @@
 	}
 
 	&__content {
-		flex: 0 0 $col-width * 2;
+		@include bp-min($col-width * 2) {
+			flex: 0 0 $col-width * 2;
+		}
 	}
 
 	.flex-expander {

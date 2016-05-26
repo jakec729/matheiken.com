@@ -21,11 +21,14 @@
 }
 
 body {
-	min-width: $col-width * 2;
 }
 
 .site-header {
-	padding-top: $gutter * 4;
+	padding-top: 90px;
+}
+
+.home main {
+	padding-top: 2em;
 }
 
 .site-footer {
