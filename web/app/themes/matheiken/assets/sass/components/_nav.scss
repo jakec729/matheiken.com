@@ -42,15 +42,16 @@
 		font-size: 13px;
 		text-decoration: none;
 		padding-bottom: 1px;
-		
+		border-bottom: 1px solid transparent;
+		@include transition();
+
 		&:hover {
-			border-bottom: 1px solid $primary-color;
+			border-color: $primary-color;
 		}
 	}
 
 	li {
 		display: inline-block;
-		// margin-bottom: 6px;
 		flex: 0 0 $col-width/2;
 		padding-left: $gutter;
 	}

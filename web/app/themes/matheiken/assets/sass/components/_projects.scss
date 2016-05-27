@@ -49,13 +49,17 @@
 		color: black;
 
 		.arrow {
-			display: inline;
+			display: inline-block;
 			opacity: 0;
+			position: relative;
+			transform: translateX(-50%);
+			@include transition();
 		}
 	}
 
 	&__link:hover .arrow{
 		opacity: 1;
+		transform: translateX(0);
 	}
 
 	&__description {

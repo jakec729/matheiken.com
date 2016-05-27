@@ -18,3 +18,7 @@
 		padding-left: 6px;
 	}
 }
+
+@mixin transition() {
+	transition: all $pace;
+}
