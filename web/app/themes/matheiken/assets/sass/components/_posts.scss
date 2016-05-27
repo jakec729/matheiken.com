@@ -32,13 +32,12 @@
 			flex: 0 0 $col-width * 3;
 		}
 
-		@include bp-min($col-width * 4) {
+		@include bp-min($col-width * 4 + 100px) {
 			flex: 0 0 $col-width * 2;
 		}
 	}
 
 	.flex-expander {
-		// flex: 0 0 $col-width * 2;
 		max-width: 100%;
 
 		@include bp-min($col-width * 3) {  

@@ -66,13 +66,16 @@
 
 .projects__header {
 	margin-bottom: $col-width/5;
+	order: 2;
+	text-align: right;
+	flex: 1 0 $col-width/2;
 
-	@include bp-min($col-width * 3) {
-		order: 2;
+	@include bp-min($col-width * 2.5) {
+		text-align: left;
+		flex-basis: $col-width;
 	}
 
-	$wide-header-col: 5;
-	@include container-grid-bp-min($wide-header-col) {
+	@include container-grid-bp-min(5) {
 		&.flex-item {
 			flex: 0 0 $col-width * 2;
 			padding-left: $col-width + $gutter !important;
@@ -80,14 +83,14 @@
 	}
 }
 
-.projects.flex-container {
-	display: block;
+.flex-container.projects-wrap {
+	flex: 0 0 $col-width;
+
+	@include bp-min($col-width * 2.5) {
+		flex-basis: $col-width * 2;
+	}
 
 	@include bp-min($col-width * 3) {
-		display: flex;
+		flex: 1;
 	}
-}
-
-.flex-container.projects-wrap {
-	flex: 1 1 0;
 }

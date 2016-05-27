@@ -21,12 +21,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-
+	}
 		
-		.flex-item {
-			padding-left: $gutter;
-			padding-right: $gutter;
-			flex: 0 0 $col-width;
-		}
+	.flex-item {
+		padding-left: $gutter;
+		padding-right: $gutter;
+		flex: 0 0 $col-width;
 	}
 }
