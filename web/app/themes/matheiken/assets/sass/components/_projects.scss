@@ -20,7 +20,7 @@
 
 .project {
 	margin-bottom: 1em;
-	height: $col-width * 2/3;
+	min-height: $col-width * 2/3;
 
 	&__title,
 	&__category,
