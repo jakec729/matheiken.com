@@ -40,14 +40,8 @@
 	a {
 		color: $black;
 		font-size: 13px;
-		text-decoration: none;
-		padding-bottom: 1px;
-		border-bottom: 1px solid transparent;
+		@include hover-link();
 		@include transition();
-
-		&:hover {
-			border-color: $primary-color;
-		}
 	}
 
 	li {

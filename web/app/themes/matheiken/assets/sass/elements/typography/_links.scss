@@ -1,11 +1,10 @@
-@mixin hover-link($color: $primary-dark, $underline: false) {
+@mixin hover-link($color: $primary-dark) {
 	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid transparent;
 
 	&:hover {
-		@if $underline == true {
-			text-decoration: underline;
-		}
-		color: $color;
+		border-color: $primary-color;
 	}
 }
 

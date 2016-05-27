@@ -28,14 +28,14 @@
 		margin: 0;
 	}
 
-	&__category {
+	&__category a{
 		font-size: 13px;
 		color: $accent-color;
+		@include hover-link($black);
+		@include transition();
 
-		a:hover {
+		&:hover {
 			color: $black;
-			border-bottom: 1px solid $black;
-			padding-bottom: 1px;
 		}
 	}
 
