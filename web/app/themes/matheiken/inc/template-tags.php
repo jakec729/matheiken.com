@@ -30,7 +30,7 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 		if ($images): 
 
 			$slider = count($images) > 1;
-			echo ($slider) ? "<section class='post__hero display-block slider'>" : "<section class='post__hero'>";
+			echo ($slider) ? "<section class='post__hero display-block'><div class='slider'>" : "<section class='post__hero'>";
 
 			foreach ($images as $image): ?>
 
@@ -48,7 +48,7 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 			<?php 
 			endforeach; 
 
-			echo "</section>";
+			echo ($slider) ? "</div><nav class='slider__nav'></nav></section>" : '</section>';
 			
 		endif;
 	}

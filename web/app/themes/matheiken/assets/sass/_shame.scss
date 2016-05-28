@@ -10,3 +10,51 @@
 	    font-size: .75rem;
 	}
 }
+
+.slider__nav {
+	position: relative;
+	margin-bottom: 4em;
+
+	& > button {
+		padding: 0;
+		border: none;
+		background: none;
+		margin: 0;
+		position: absolute;
+
+		&.slick-next {
+			right: 0;
+			text-align: right;
+		}
+	}
+
+	ul {
+		display: block;
+		margin: 0;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+
+		& + li {
+			margin-left: 1em;
+		}
+
+		button {
+			display: inline-block;
+			height: .75em;
+			width: .75em;
+			line-height: 1;
+			border: none;
+			border-radius: 50%;
+			color: transparent;
+			background-color: grey(10);
+			padding: 0;
+		}
+
+		&.slick-active button {
+			background-color: grey(30);
+		}
+	}
+}
