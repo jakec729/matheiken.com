@@ -30,7 +30,7 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 
 			<figure class="post__image flex-expander">
 				<a href="<?php echo $image['url']; ?>">
-					<img src="<?php echo $image['sizes']['project_image_large']; ?>" alt="<?php echo $image['alt']; ?>" />
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 				</a>	
 				<?php if($image['caption']): ?>			 
 					<figcaption>
@@ -85,7 +85,7 @@ if ( ! function_exists( 'matheiken_cover_photo') ) :
 		if (has_post_thumbnail()) : ?>
 			<?php $position = (get_field('cover_photo_position')) ? get_field('cover_photo_position') : 'top-left'; ?>
 			<figure class="project__image hover-fixed__image <?= 'hover-' . $position ?>">
-				<?php the_post_thumbnail('project_image_cover'); ?>
+				<?php the_post_thumbnail(); ?>
 			</figure>
 		<?php endif; 
 	}
