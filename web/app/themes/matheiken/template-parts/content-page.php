@@ -10,9 +10,7 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
-		<section class="post__hero">
-			<?php matheiken_hero_image(); ?>
-		</section>
+		<?php matheiken_hero_image(); ?>
 			
 		<header class="post__header">
 			<?php the_title('<h1 class="post__title entry-title flex-expander">', '</h1>'); ?>

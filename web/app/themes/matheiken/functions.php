@@ -82,9 +82,13 @@ add_action( 'widgets_init', 'matheiken_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-add_action( 'wp_enqueue_scripts', function() {
-	wp_enqueue_style( 'matheiken-style', get_stylesheet_uri() );
-});
+function matheiken_scripts() {
+	 wp_enqueue_style( 'matheiken-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'matheiken-js', get_template_directory_uri() . "/assets/js/main.js", array('jquery'), '1.0.0', true );
+	 wp_enqueue_style( 'slick-css', get_template_directory_uri() . "/assets/js/plugins/slick-carousel/slick/slick.css" );
+	wp_enqueue_script( 'slider-js', get_template_directory_uri() . "/assets/js/plugins/slick-carousel/slick/slick.min.js", array(), '1.0.0', false );
+}
+add_action( 'wp_enqueue_scripts', 'matheiken_scripts');
 
 /**
  * Custom fields tags for this theme.

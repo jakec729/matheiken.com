@@ -22,3 +22,7 @@
 @mixin transition() {
 	transition: all $pace;
 }
+
+.display-block {
+	display: block !important;
+}

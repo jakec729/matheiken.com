@@ -26,9 +26,15 @@ endif;
 if ( ! function_exists( 'matheiken_hero_image') ) :
 	function matheiken_hero_image() {
 		$images = get_field('hero_images');
-		if ($images): foreach ($images as $image): ?>
 
-			<figure class="post__image flex-expander">
+		if ($images): 
+
+			$slider = count($images) > 1;
+			echo ($slider) ? "<section class='post__hero display-block slider'>" : "<section class='post__hero'>";
+
+			foreach ($images as $image): ?>
+
+			<figure class="post__image">
 				<a href="<?php echo $image['url']; ?>">
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 				</a>	
@@ -39,7 +45,12 @@ if ( ! function_exists( 'matheiken_hero_image') ) :
 				<?php endif; ?>
 			</figure>
 
-		<?php endforeach; endif;
+			<?php 
+			endforeach; 
+
+			echo "</section>";
+			
+		endif;
 	}
 endif;	
 

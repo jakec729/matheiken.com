@@ -12,12 +12,7 @@
 <?php if ( is_single() ): ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class("post"); ?>>
-
-		<?php if (has_post_thumbnail()) : ?>
-			<header class="post__header">
-				<?php matheiken_hero_image() ?>
-			</header>
-		<?php endif; ?>
+		<?php matheiken_hero_image() ?>
 
 		<section class="post__details">
 			<div class="post__content">
