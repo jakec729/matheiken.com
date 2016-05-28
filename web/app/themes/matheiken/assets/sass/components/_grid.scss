@@ -16,6 +16,12 @@
 	}
 }
 
+@mixin col-bp-min($cols) {
+	@include bp-min($col-width * $cols) {
+		@content;
+	}
+}
+
 .container-fluid {
 	width: calc(100% - #{($gutter * 2)});
 	margin: 0 auto;
