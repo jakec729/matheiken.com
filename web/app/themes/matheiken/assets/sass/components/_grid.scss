@@ -36,30 +36,12 @@
 		width: $col-width * 3;
 	}
 
-	@for $i from 3 through 12 {
+	@for $i from 3 through $max-cols {
 		@include container-grid-bp-min($i) {
 			margin: 0 auto;
 			width: $col-width * $i; 
 		}
 	}
-}
-
-.container-fluid-max .container-fluid {
-	@include bp-min($col-width * 2) {
-		max-width: $col-width * $container-fluid-max-cols;
-		margin-left: 0;
-	}
-
-	@include fixed-grid-bp-min(3) {
-		margin-left: $grid-offset-side;
-	}
-
-	@for $i from 3 through 12 {
-		@include fixed-grid-bp-min($i) {
-			width: $col-width * $i; 
-		}
-	}
-
 }
 
 @mixin grid-lines() {
