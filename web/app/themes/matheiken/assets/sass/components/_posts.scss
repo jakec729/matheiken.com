@@ -20,16 +20,13 @@
 		margin-bottom: $gutter;
 	}
 
+	&__images,
 	&__details {
 		display: flex;
 		flex-wrap: wrap;
 	}
 
 	&__content {
-		// @include bp-min($col-width * 3) {
-		// 	flex: 0 0 $col-width * 3;
-		// }
-
 		@include bp-min($col-width * 4 / .78) {
 			flex: 0 0 $col-width * 2;
 		}
@@ -73,7 +70,7 @@
 			float: left;
 		}
 
-		&.half-width + .half-width {
+		&.half-width + .half-width:nth-child(2n - 1) {
 			margin-left: 1em;
 		}
 	}
