@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 	<header class="site-header" role="banner">
 		<nav class="navbar navbar-fixed page-wrap" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'matheiken' ); ?>">
-			<div class="container-fluid grid-lines">
+			<div class="container grid-lines">
 				<div class="navbar__brand">
 					<a href="<?php echo esc_url( home_url( '/' ) ) ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/imgs/matheiken.svg" alt="Site Logo	">
 						<h1 class="seo-hidden"><?php bloginfo( 'name' ); ?></h1>

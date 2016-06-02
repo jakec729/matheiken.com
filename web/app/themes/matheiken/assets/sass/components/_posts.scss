@@ -5,16 +5,14 @@
 
 	&__sidebar,
 	&__details > div {
-		@include bp-min($col-width * 2) {
-			padding: 0 $gutter;
-		}
+		padding: 0 $gutter;
 	}
 
 	&__header,
 	&__hero {
+		padding: 0 $gutter;
 		@include bp-min($col-width * 2) {
 			display: flex;
-			padding: 0 $gutter;
 		}
 	}
 
@@ -28,11 +26,11 @@
 	}
 
 	&__content {
-		@include bp-min($col-width * 3) {
-			flex: 0 0 $col-width * 3;
-		}
+		// @include bp-min($col-width * 3) {
+		// 	flex: 0 0 $col-width * 3;
+		// }
 
-		@include bp-min($col-width * 4 + 100px) {
+		@include bp-min($col-width * 4 / .78) {
 			flex: 0 0 $col-width * 2;
 		}
 	}
@@ -87,104 +85,3 @@
 	}
 }
 
-.page-template-default {
-
-	.post__content,
-	.post__sidebar {
-		display: block;
-
-		@include bp-min($col-width * 2) {
-			padding: 0 $gutter;
-		}
-	}
-
-	@include bp-min($col-width * 2) {
-		.post__header,
-		.post__content,
-		.post__sidebar {
-			width: $col-width * 2;
-		}
-	}
-
-	@include bp-min($col-width * 3) {
-		.post__header,
-		.post__content {
-			float: left;
-		}
-
-		.post__sidebar {
-			float: right;
-			width: $col-width;
-		}
-	}
-
-	@include fixed-grid-bp-min(4) {
-		.post__header,
-		.post__content {
-			width: $col-width * 3;
-		}
-	}
-	
-	@include fixed-grid-bp-min(5) {
-		.post__sidebar {
-			width: $col-width * 2;
-			padding-right: $gutter + $col-width;
-		}
-	}
-}
-
-.sidebar {
-
-	@include bp-max($col-width * 3 - 1px) {
-		.widget-wrap .inner {
-			& > div {
-				float: left;
-				margin-right: 4em;
-			}
-
-			& > .widget-social {
-				float: right;
-				margin-right: 0;
-			}
-		}
-	}
-
-	.list--social {
-
-		@include bp-min($col-width * 3) {
-			display: flex;
-			border-bottom: 2px solid black;
-			padding-bottom: 1em;
-			margin-top: 0;
-			margin-bottom: .5em;
-			justify-content: space-between;
-		}
-	}
-
-	&__heading {
-		font-size: 13px;
-		font-weight: bold;
-	}
-
-	a {
-		color: $dark-grey;
-		text-decoration: none;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
-
-.widget__heading {
-	font-size: 13px;
-	font-weight: 700;
-	padding: $gutter/2 0;
-	border-top: 1px solid black;
-	color: black;
-	margin: $gutter 0;
-
-	@include bp-min($col-width * 2) {
-		margin: $gutter;
-	}
-}

@@ -12,9 +12,9 @@
  * @package Matheiken_Theme
  */
 
-get_header('container-max'); ?>
+get_header(); ?>
 
-	<main id="main" class="site-main container-fluid" role="main">
+	<main id="main" class="site-main container" role="main">
 
 			<?php while ( have_posts() ) { 
 				the_post();

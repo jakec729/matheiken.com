@@ -6,6 +6,45 @@ body {
 	padding-top: 90px;
 }
 
+@mixin container() {
+	@include bp-min($container-start) {
+		width: $content-width;
+		margin: 0 $container-margin;
+	}
+}
+
+@mixin container-end() {
+	@include bp-min($container-end) {
+		width: $content-width-end;
+		margin: 0 auto;
+	}
+}
+
+@mixin container-stepped() {
+	
+	@include bp-min($col-width * 3 / .78) {
+		width: $col-width * 3;
+	}
+
+	@include bp-min($col-width * 4 / .78) {
+		width: $col-width * 4;
+	}
+}
+
+.site-main,
+.container {
+	@include container();
+}
+
+.page .container,
+.page .container-fluid,
+.single .container,
+.single .container-fluid {
+	@include container-stepped();
+	@include container-end();
+}
+
+
 .home main {
 	padding-top: 2em;
 }

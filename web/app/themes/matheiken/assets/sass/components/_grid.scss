@@ -1,46 +1,6 @@
-@mixin container-grid-bp-min($cols) {
-	@include bp-min($col-width * $cols + $grid-offset-side * 2) {
-		@content;
-	}
-}
-
-@mixin container-grid-bp-max($cols) {
-	@include bp-max($col-width * $cols + $grid-offset-side * 2 - 1px) {
-		@content;
-	}
-}
-
-@mixin fixed-grid-bp-min($cols) {
-	@include bp-min($col-width * $cols + $grid-offset-side) {
-		@content;
-	}
-}
-
 @mixin col-bp-min($cols) {
 	@include bp-min($col-width * $cols) {
 		@content;
-	}
-}
-
-.container-fluid {
-	width: calc(100% - #{($gutter * 2)});
-	margin: 0 auto;
-	// width: 100%;
-
-	@include bp-min($col-width * 2) {
-		width: 100%;
-		margin: initial;
-	}
-
-	@include bp-min($col-width * 3) {
-		width: $col-width * 3;
-	}
-
-	@for $i from 3 through $max-cols {
-		@include container-grid-bp-min($i) {
-			margin: 0 auto;
-			width: $col-width * $i; 
-		}
 	}
 }
 
@@ -55,7 +15,7 @@
 		z-index: 1000;
 		position: fixed;
 		height: 100%;
-		width: 100%;
+		width: calc(#{$content-width} - #{$col-width/2});
 		content: "";
 		display: block;
 		pointer-events: none;
@@ -65,18 +25,33 @@
 
 .grid-lines {
 
-	@include bp-min($col-width * 2.5) {
+	@include bp-min($container-start) {
 		@include grid-lines;
 	}
 
-	.single & {
+	.single &:before,
+	.page &:before {
+		width: $content-width;
+	}
 
-		&:before {
-			display: none;
-		}
+
+	// 	&:before {
+	// 		display: none;
+	// 	}
 		
-		@include bp-min($col-width * 3) {
-			@include grid-lines();
-		}
+	// 	@include bp-min($col-width * 3) {
+	// 		@include grid-lines();
+	// 	}
+	// }
+}
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
 	}
 }

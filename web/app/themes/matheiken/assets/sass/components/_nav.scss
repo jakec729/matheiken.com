@@ -1,8 +1,6 @@
 .navbar {
 	padding: $gutter*0.5 0;
 	background-color: white;
-	display: flex;
-	align-items: center;
 
 	&.navbar-fixed {
 		position: fixed;
@@ -11,17 +9,15 @@
 		width: 100%;
 		z-index: 10;
 
-		.container-fluid {
-			@include container-grid-bp-max(3) {
-				width: 100%;
-			}
+		.container {
+			display: flex;
+			align-items: center;
 		}
 	}
 
 	.active {
 		font-weight: 700;
 	}
-
 }
 
 .navbar__items {
@@ -29,12 +25,11 @@
 	line-height: 16px;
 	margin: 0;
 	text-align: right;
-	flex-grow:1;
-	padding: 22px $gutter 22px 0;
+	padding: 22px $gutter;
+	width: 100%;
 
-	@include container-grid-bp-min(3) {
+	@include bp-min($container-start) {
 		text-align: left;
-		display: flex;
 	}
 
 	a {
@@ -46,40 +41,27 @@
 
 	li {
 		display: inline-block;
-		flex: 0 0 $col-width/2;
-		padding-left: $gutter;
+		padding-left: 1.25em;
+
+		@include bp-min($container-start) {
+			width: 108px;
+			padding-left: 0;
+		}
 	}
 }
 
 .navbar__brand {
-	position: fixed;
-	left: 24px;
 	width: 50px;
+	margin-left: 1.5em;
+	display: inline-block;
+
+	@include bp-min($container-start) {
+		margin-left: 0;
+		position: fixed;
+		left: 24px;
+	}
 
 	img {
 		width: 100%;
 	}
 }
-
-// .navbar__brand {
-// 	width: 20%;
-// 	padding-left: $gutter;
-// 	position: relative;
-// 	left: -5px;
-
-// 	@include bp-min($col-width * 4 / $container-width-num) {
-// 		width: (100% - $container-width) / 2 / $container-width-num;
-// 		margin-left: (100% - $container-width) / 2 / $container-width-num * -1;
-// 		text-align: center;
-// 		padding-left: 0;
-// 		margin-bottom: 0;
-// 	}
-
-// 	img {
-// 		max-width: $gutter*2;
-
-// 		@include bp-min($col-width * 4 / $container-width-num) {
-// 			max-width: $gutter * 1.5;
-// 		}
-// 	}
-// }

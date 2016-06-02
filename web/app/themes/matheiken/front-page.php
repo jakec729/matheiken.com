@@ -53,11 +53,11 @@ get_header(); ?>
 			$query = new WP_Query($category['args']);
 		 ?>
 		<?php if ( $query->have_posts() ) : ?>
-			<section class="projects flex-container">
+			<section class="projects">
 				<header class="projects__header flex-item">
 					<h3 class="projects__group-name"><?= $category['title']; ?></h3>
 				</header>
-				<div class="flex-container projects-wrap">
+				<div class="projects-wrap">
 					<?php while ( $query->have_posts() ) {
 						$query->the_post();
 						get_template_part( 'template-parts/content', get_post_format() );

@@ -2,12 +2,13 @@ $base-font-size: 13px;
 $headline-font: $font-sans;
 $body-font: $font-sans;
 
-$container-width: 80%;
-$container-width-num: .80;
-$content-width: 1151px;
-$container-min: $content-width + 40px;
 $col-width: 230px;
-$grid-offset-side: 100px;
+$content-width: 78%;
+$content-width-end: $col-width * 5;
+$container-margin: (100% - $content-width) / 2;
+$container-start: ($col-width * 2.5) / .78;
+$container-end: ($col-width * 5) / .78;
+$sidebar-start: $col-width * 3 / .78;
 $max-cols: 8;
 $gutter: 30px;
 

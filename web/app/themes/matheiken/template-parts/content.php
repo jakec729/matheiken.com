@@ -46,7 +46,7 @@
 
 <?php else: ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class("project flex-item hover-fixed hover-fixed__trigger"); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class("project hover-fixed hover-fixed__trigger"); ?>>
 		<?php matheiken_cover_photo(); ?>
 		<p class="project__category"><?php matheiken_categories(); ?></p>
 		<a href="<?php the_permalink(); ?>" class="project__link">

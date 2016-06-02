@@ -1,0 +1,37 @@
+.page-template-default {
+
+	.post__content,
+	.post__sidebar {
+		display: block;
+		padding: 0 $gutter;
+	}
+
+	.post__header,
+	.post__content,
+	.post__sidebar {
+		@include bp-min($col-width * 2) {
+			width: $col-width * 2;
+		}
+	}
+
+	.post__content {
+		@include bp-min($sidebar-start) {
+			float: left;
+		}
+
+		@include bp-min($col-width * 4 / .78) {
+			width: $col-width * 3;
+		}
+	}
+
+	.post__sidebar {
+		@include bp-min($sidebar-start) {
+			float: right;
+			width: $col-width;
+		}
+
+		@include bp-min($col-width * 5 / .78) {
+			margin-right: $col-width;
+		}
+	}
+}
