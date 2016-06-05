@@ -56,6 +56,7 @@ endif;
 
 if ( ! function_exists( 'matheiken_related_projects') ) :
 	function matheiken_related_projects() {
+		global $post;
 		$posts = get_field('related_projects');
 		if ($posts) : ?>
 			<aside class="widget-related-projects">
