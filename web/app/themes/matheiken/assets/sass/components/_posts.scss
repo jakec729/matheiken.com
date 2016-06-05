@@ -65,12 +65,13 @@
 	figure {
 		margin-bottom: $gutter;
 
-		&.half-width {
+		&.float-left,
+		&.float-right {
 			width: calc(50% - .5em);
 			float: left;
 		}
 
-		&.half-width + .half-width:nth-child(2n - 1) {
+		&.float-right {
 			margin-left: 1em;
 		}
 	}
