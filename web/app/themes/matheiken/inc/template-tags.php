@@ -26,8 +26,16 @@ endif;
 if ( ! function_exists( 'matheiken_hero_image') ) :
 	function matheiken_hero_image() {
 		$images = get_field('hero_images');
+		$embed = get_field('embed');
 
-		if ($images): 
+		if ($embed): ?>
+			<section class="post__hero display-block mb2">
+				<div class="embed-container">
+					<?php the_field('embed'); ?>
+				</div>
+			</section>
+
+		<?php elseif ($images): 
 
 			$slider = count($images) > 1;
 			echo ($slider) ? "<section class='post__hero display-block'><div class='slider'>" : "<section class='post__hero'>";

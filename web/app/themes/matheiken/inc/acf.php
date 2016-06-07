@@ -77,6 +77,22 @@ function my_acf_add_local_field_groups() {
 				'max_size' => '',
 				'mime_types' => '',
 			),
+			array (
+				'key' => 'field_5757439acf4a8',
+				'label' => 'Video/Embed',
+				'name' => 'embed',
+				'type' => 'oembed',
+				'instructions' => 'Paste the link for your video or embed',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'width' => '',
+				'height' => '',
+			),
 		),
 		'location' => array (
 			array (
