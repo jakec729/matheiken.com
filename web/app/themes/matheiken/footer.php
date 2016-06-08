@@ -11,9 +11,6 @@
 
 ?>
 		</main>
-		<footer class="site-footer" role="contentinfo">
-			<p>&copy; <?= date("Y"); ?> Matheiken</p>
-		</footer>
 		<?php wp_footer(); ?>
 	</body>
 </html>
